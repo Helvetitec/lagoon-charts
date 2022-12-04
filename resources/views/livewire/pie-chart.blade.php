@@ -26,7 +26,9 @@
                 title:'{{ $title }}',
                 @if(!is_null($height)) height: {{ $height }}, @endif
                 @if(!is_null($width)) width: {{ $width}}, @endif
-                @json($options)
+                @if(!is_null($options))
+                    @json($options)
+                @endif
             };
 
             // Instantiate and draw our chart, passing in some options.

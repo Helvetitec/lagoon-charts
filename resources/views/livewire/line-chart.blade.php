@@ -20,7 +20,9 @@
             title: '{{ $title }}',
             @if(!is_null($height)) height: {{ $height }}, @endif
             @if(!is_null($width)) width: {{ $width}}, @endif
-            @json($options)
+            @if(!is_null($options))
+                @json($options)
+            @endif
           };
 
           var chart = new google.visualization.LineChart(document.getElementById('{{ $chartId.$random }}'));
