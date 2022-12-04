@@ -3,15 +3,15 @@
         @push('headerScripts')
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
-             google.charts.load('current', {'packages':['corechart'], 'language': 'pt_BR'});
+             google.charts.load('current', {'packages':['corechart'], 'language': '{{ config(lagoon.language) }}'});
             </script>
         @endpush
     @endonce
 
     <script type="text/javascript">
-        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawChart{{ $chartId }});
 
-        function drawChart() {
+        function drawChart{{ $chartId }}() {
           var data = google.visualization.arrayToDataTable(
             @json($chartData)
           );

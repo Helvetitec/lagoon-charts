@@ -3,7 +3,7 @@
         @push('headerScripts')
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
-             google.charts.load('current', {'packages':['corechart'], 'language': 'pt_BR'});
+             google.charts.load('current', {'packages':['corechart'], 'language': '{{ config(lagoon.language) }}'});
             </script>
         @endpush
     @endonce
@@ -15,21 +15,22 @@
         // instantiates the pie chart, passes in the data and
         // draws it.
         function drawChart{{ $chartId }}() {
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Value');
+            data.addRows(@json($chartData));
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name');
-        data.addColumn('number', 'Value');
-        data.addRows(@json($chartData));
+            // Set chart options
+            var options = {
+                            title:'{{ $title }}',
+                            width:{{ $width }},
+                            height:{{ $height }}
+                        };
 
-        // Set chart options
-        var options = {'title':'{{ $title }}',
-                        'width':400,
-                        'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('{{ $chartId.$random }}'));
-        chart.draw(data, options);
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('{{ $chartId.$random }}'));
+            chart.draw(data, options);
         }
     </script>
 

@@ -9,8 +9,7 @@ class PieChart extends Component
 {
     public $title = "NO_TITLE";
     public $chartData = [];
-
-
+    
     public $chartId;
     public $random;
 
