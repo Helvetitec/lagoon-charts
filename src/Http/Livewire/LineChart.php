@@ -10,6 +10,9 @@ class LineChart extends Component
     public $title = "NO_TITLE";
     public $chartData = [];
 
+    public $height;
+    public $width;
+    
     public $options = ""; 
 
     public $chartId;

@@ -23,9 +23,11 @@
 
             // Set chart options
             var options = {
-                            title:'{{ $title }}',
-                            {{ $options }}
-                        };
+                title:'{{ $title }}',
+                @if(!is_null($height)) height: {{ $height }}, @endif
+                @if(!is_null($width)) width: {{ $width}}, @endif
+                {{ $options }}
+            };
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('{{ $chartId.$random }}'));
