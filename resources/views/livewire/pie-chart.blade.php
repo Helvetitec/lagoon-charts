@@ -24,7 +24,6 @@
             // Set chart options
             var options = {
                 title:'{{ $title }}',
-                format: '{{ $format }}',
                 @if(!is_null($height)) height: {{ $height }}, @endif
                 @if(!is_null($width)) width: {{ $width}}, @endif
                 {{ $options }}
