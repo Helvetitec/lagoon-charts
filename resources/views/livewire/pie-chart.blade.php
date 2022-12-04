@@ -25,8 +25,6 @@
             var options = {
                             title:'{{ $title }}',
                             {{ $options }}
-                            // width:{{ $width }},
-                            // height:{{ $height }}
                         };
 
             // Instantiate and draw our chart, passing in some options.
