@@ -17,6 +17,6 @@ class LineChart extends Component
     public function render()
     {
         $this->random = Carbon::now()->timestamp;
-        return view('livewire.line-chart');
+        return view('lagoon::livewire.line-chart');
     }
 }

@@ -17,6 +17,6 @@ class PieChart extends Component
     public function render()
     {
         $this->random = Carbon::now()->timestamp;
-        return view('livewire.pie-chart');
+        return view('lagoon::livewire.pie-chart');
     }
 }
