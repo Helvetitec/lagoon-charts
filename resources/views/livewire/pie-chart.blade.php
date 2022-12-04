@@ -33,5 +33,5 @@
         }
     </script>
 
-    <div id="{{ $chartId.$random }}"></div>
+    <div id="{{ $chartId.$random }}" style="height: 100%; width: 100%;"></div>
 </div>
