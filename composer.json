@@ -1,0 +1,19 @@
+{
+    "name": "helvetiapps/lagoon-charts",
+    "description": "Google Charts for Laravel Livewire",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Helvetiapps\\LagoonCharts\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Helvetiapps\\LagoonCharts\\LagoonServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
