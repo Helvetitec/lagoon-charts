@@ -3,13 +3,16 @@
 namespace Helvetiapps\LagoonCharts\Http\Livewire;
 
 use Carbon\Carbon;
+use Helvetiapps\LagoonCharts\Objects\ChartOptions;
 use Livewire\Component;
 
 class PieChart extends Component
 {
     public $title = "NO_TITLE";
     public $chartData = [];
-    
+
+    public $options = "";
+
     public $chartId;
     public $random;
 

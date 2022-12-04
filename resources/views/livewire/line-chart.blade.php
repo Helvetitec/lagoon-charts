@@ -18,9 +18,10 @@
 
           var options = {
             title: '{{ $title }}',
-            hAxis: { format: '', showTextEvery: 1, ticks: 1, slantedText: true},
-            vAxis: { format: 'currency'},
-            legend: { position: 'bottom' }
+            {{ $options }}
+            // hAxis: { format: '', showTextEvery: 1, ticks: 1, slantedText: true},
+            // vAxis: { format: 'currency'},
+            // legend: { position: 'bottom' }
           };
 
           var chart = new google.visualization.LineChart(document.getElementById('{{ $chartId.$random }}'));
