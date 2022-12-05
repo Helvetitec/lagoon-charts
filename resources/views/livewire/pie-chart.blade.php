@@ -1,5 +1,10 @@
 <div>
     @once
+        @push('styles')
+            <style>
+                svg > g > g.google-visualization-tooltip { pointer-events: none }
+            </style>
+        @endpush
         @push('headerScripts')
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
