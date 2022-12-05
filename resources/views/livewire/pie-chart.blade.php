@@ -17,19 +17,15 @@
         function drawChart{{ $chartId }}() {
             // Create the data table.
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Name');
-            data.addColumn('number', 'Value');
+            @foreach($columns as $cType => $cTitle)
+                data.addColumn('{{ $cType }}', '{{ $cTitle }}');
+            @endforeach
+            // data.addColumn('string', 'Name');
+            // data.addColumn('number', 'Value');
             data.addRows(@json($chartData));
 
             // Set chart options
-            var options = {
-                title:'{{ $title }}',
-                @if(!is_null($height)) height: {{ $height }}, @endif
-                @if(!is_null($width)) width: {{ $width}}, @endif
-                @if(!is_null($options))
-                    @json($options)
-                @endif
-            };
+            var options = @json($optionsArray);
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('{{ $chartId.$random }}'));

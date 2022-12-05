@@ -16,14 +16,7 @@
             @json($chartData)
           );
 
-          var options = {
-            title: '{{ $title }}',
-            @if(!is_null($height)) height: {{ $height }}, @endif
-            @if(!is_null($width)) width: {{ $width}}, @endif
-            @if(!is_null($options))
-                @json($options)
-            @endif
-          };
+          var options = @json($optionsArray);
 
           var chart = new google.visualization.LineChart(document.getElementById('{{ $chartId.$random }}'));
 
