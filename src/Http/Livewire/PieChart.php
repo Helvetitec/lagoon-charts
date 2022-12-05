@@ -14,7 +14,7 @@ class PieChart extends Component
     public $height;
     public $width;
 
-    public $columns;
+    public $columns = [];
     public $options;
 
     public $chartId;
