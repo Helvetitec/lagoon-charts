@@ -13,8 +13,8 @@ Google Charts for Laravel Livewire
 
 Add to composer.json
 ```
-//Other dependencies
 "require": {
+    //Other dependencies
     "helvetiapps/lagoon-charts": "^0.1"
 },
 "repositories": [
