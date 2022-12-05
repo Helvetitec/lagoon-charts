@@ -1,8 +1,25 @@
 # Lagoon Charts
 Google Charts for Laravel Livewire
 
+## Requirements
+
+* Laravel 9+
+* Livewire 2+
+
+## Installation
+
+Todo
+
+
+## Included Charts
+
+* Line Charts (Preview)
+* Pie Charts (Preview)
+
 
 ## Usage
+
+TODO
 
 ### Line Chart
 
