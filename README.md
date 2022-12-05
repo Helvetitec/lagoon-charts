@@ -1,6 +1,9 @@
 # Lagoon Charts
 Google Charts for Laravel Livewire
 
+**Do not use this library, it is heavily on work and only used for testing...**
+
+
 ## Requirements
 
 * Laravel 9+
@@ -59,5 +62,3 @@ Blade
 ```
 @livewire('lagoon-pie-chart', ['chartId' => 'uniqueId', 'chartData' => $data, 'title' => 'Title'], key('unique'.now()))
 ```
-
-**Do not use this library, it is heavily on work and only used for testing...**
