@@ -31,8 +31,10 @@ class LineChart extends Component
         if(!is_null($this->width)){
             $newOptions["width"] = $this->width;
         }
-        foreach($this->options as $key => $value){
-            $newOptions[$key] = $value;
+        if(!is_null($this->options) && is_array($this->options)){
+            foreach($this->options as $key => $value){
+                $newOptions[$key] = $value;
+            }
         }
 
         $this->optionsArray = $newOptions;
