@@ -17,6 +17,14 @@ Todo
 * Pie Charts (Preview)
 
 
+## TODO
+
+* Add HTML Tooltips as custom class
+* Add all types of Charts
+* Add an easier way to add data etc.
+* Add an easier way to add/edit options
+
+
 ## Usage
 
 TODO
