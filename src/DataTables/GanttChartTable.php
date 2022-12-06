@@ -7,13 +7,13 @@ use Carbon\Carbon;
 class GanttChartTable{
     private $data = [];
 
-    public function addTask(string $id, string $name, Carbon $start, Carbon $end, int $duration, int $completion, string $dependencies){
+    public function addTask(string $id, string $name, Carbon $start, Carbon $end, int $duration, int $completion, ?string $dependencies){
         array_push($data, [
             $id,
             $name,
             "new Date('".$start->year."','".$start->month."','".$start->day."')",
             "new Date('".$end->year."','".$end->month."','".$end->day."')",
-            $duration,
+            $duration * 24 * 60 * 60 * 1000,
             $completion,
             $dependencies
         ]);
