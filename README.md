@@ -1,7 +1,7 @@
 # Lagoon Charts
 Google Charts for Laravel Livewire
 
-**Do not use this library, it is heavily on work and only used for testing...**
+**Warning: This is a very early version of the library and changes on the codebase WILL be made**
 
 
 ## Requirements
@@ -9,12 +9,12 @@ Google Charts for Laravel Livewire
 * Laravel 9+
 * Livewire 2+
 
+
 ## Installation
 
 Add to composer.json
 ```
 "require": {
-    //Other dependencies
     "helvetiapps/lagoon-charts": "^0.1"
 },
 "repositories": [
@@ -28,49 +28,79 @@ Add to composer.json
 
 ## Included Charts
 
-* Line Charts (Preview)
-* Pie Charts (Preview)
+* Line Charts
+* Pie Charts
+* Area Charts
+* Bar Charts
 
 
 ## TODO
 
 * Add HTML Tooltips as custom class
 * Add all types of Charts
-* Add an easier way to add data etc.
-* Add an easier way to add/edit options
 
 
 ## Usage
 
-TODO
-
-### Line Chart
-
-Data
-```php
-$data = [];
-```
-
-Blade
-```
-@livewire('lagoon-line-chart', ['chartId' => 'uniqueId', 'chartData' => $data, 'title' => 'Title'], key('unique'.now()))
-```
-
 
 ### Pie Chart
 
-Data
+Livewire
 ```php
-//Set title as first values
-$data = ['Day', 'Value'];
-
-//Add other data
-array_push($data, [1,250]);
-array_push($data, [2,650]);
-array_push($data, [3,400]);
+$pieChartTable = new \HelvetiApps\LagoonCharts\DataTables\PieChartTable();
+$pieChartTable->addRow("Row1", 20);
+$pieChartTable->addRow("Row2", 30);
+$data = $pieChartTable->toArray();
 ```
 
 Blade
 ```
-@livewire('lagoon-pie-chart', ['chartId' => 'uniqueId', 'chartData' => $data, 'title' => 'Title'], key('unique'.now()))
+@livewire('lagoon-pie-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'title' => 'Title', 'width' => 400, 'height' => 200, 'column1' => 'Col1Label', 'column2' => 'Col2Label'], key('uniqueKey'.now()))
+```
+
+
+### Line Chart
+
+Livewire
+```php
+$lineChartTable = new \HelvetiApps\LagoonCharts\DataTables\LineChartTable('xAxis', ['yAxis1', 'yAxis2']);
+$lineChartTable->addRow([1, 100, 200]);
+$lineChartTable->addRow([2, 200, 100]);
+$data = $lineChartTable->toArray();
+```
+
+Blade
+```
+@livewire('lagoon-line-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
+```
+
+
+### Bar Chart
+
+Livewire
+```php
+$barChartTable = new \HelvetiApps\LagoonCharts\DataTables\BarChartTable('xAxis', ['yAxis1', 'yAxis2']);
+$barChartTable->addRow([1, 100, 200]);
+$barChartTable->addRow([2, 200, 100]);
+$data = $barChartTable->toArray();
+```
+
+Blade
+```
+@livewire('lagoon-bar-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
+```
+
+### Area Chart
+
+Livewire
+```php
+$areaChartTable = new \HelvetiApps\LagoonCharts\DataTables\AreaChartTable('xAxis', ['yAxis1', 'yAxis2']);
+$areaChartTable->addRow([1, 100, 200]);
+$areaChartTable->addRow([2, 200, 100]);
+$data = $areaChartTable->toArray();
+```
+
+Blade
+```
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
 ```
