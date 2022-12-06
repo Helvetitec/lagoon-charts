@@ -17,16 +17,31 @@
         google.charts.setOnLoadCallback(drawChart{{ $chartId }});
 
         function drawChart{{ $chartId }}() {
-            var data = new google.visualization.DataTable({ rows: {!! $chartData !!} });
+            var data = new google.visualization.DataTable(
+                {
+                    cols: 
+                    [
+                        {id: 'id', label: 'Task ID', type: 'string'},
+                        {id: 'name', label: 'Task Name', type: 'string'},
+                        {id: 'resource', label: 'Resource', type: 'string'},
+                        {id: 'start', label: 'Start Date', type: 'date'},
+                        {id: 'end', label: 'End Date', type: 'date'},
+                        {id: 'duration', label: 'Duration', type: 'number'},
+                        {id: 'percent', label: 'Percent Complete', type: 'number'},
+                        {id: 'dependencies', label: 'Dependencies', type: 'string'}
+                    ],
+                    rows: {!! $chartData !!}
+                }
+            );
 
-            data.addColumn('string', 'Task ID');
-            data.addColumn('string', 'Task Name');
-            data.addColumn('string', 'Resource');
-            data.addColumn('date', 'Start Date');
-            data.addColumn('date', 'End Date');
-            data.addColumn('number', 'Duration');
-            data.addColumn('number', 'Percent Complete');
-            data.addColumn('string', 'Dependencies');
+            // data.addColumn('string', 'Task ID');
+            // data.addColumn('string', 'Task Name');
+            // data.addColumn('string', 'Resource');
+            // data.addColumn('date', 'Start Date');
+            // data.addColumn('date', 'End Date');
+            // data.addColumn('number', 'Duration');
+            // data.addColumn('number', 'Percent Complete');
+            // data.addColumn('string', 'Dependencies');
 
             // data.addRows(@json($chartData));
 
