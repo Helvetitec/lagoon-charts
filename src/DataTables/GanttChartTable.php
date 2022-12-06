@@ -3,7 +3,6 @@
 namespace Helvetiapps\LagoonCharts\DataTables;
 
 use Carbon\Carbon;
-use Helvetiapps\LagoonCharts\Dummies\Date;
 use Illuminate\Support\Facades\Date;
 
 class GanttChartTable{
