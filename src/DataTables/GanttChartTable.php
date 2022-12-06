@@ -25,7 +25,7 @@ class GanttChartTable{
         $str = "[";
 
         foreach($this->data as $item){
-            $str .= "{c: [{v: '".$item[0]."', {v: '".$item[1]."'}, {v: '".$item[2]."'}, {v: '".$item[3]."'}, {v: '".$item[4]."'}, {v: '".$item[5]."'}, {v: '".$item[6]."'}, {v: '".$item[7]."'}]}\r\n";
+            $str .= "{c: [{v: '".$item[0]."'}, {v: '".$item[1]."'}, {v: '".$item[2]."'}, {v: '".$item[3]."'}, {v: '".$item[4]."'}, {v: '".$item[5]."'}, {v: '".$item[6]."'}, {v: '".$item[7]."'}]}\r\n";
         }
 
         $str .= "]";
