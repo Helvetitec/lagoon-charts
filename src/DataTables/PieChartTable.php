@@ -5,7 +5,7 @@ namespace Helvetiapps\LagoonCharts\DataTables;
 use Exception;
 
 class PieChartTable{
-    private $data;
+    private $data = [];
 
     public function __construct($rows = [])
     {
