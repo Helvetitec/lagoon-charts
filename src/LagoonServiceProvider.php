@@ -4,6 +4,8 @@ namespace Helvetiapps\LagoonCharts;
 
 use Helvetiapps\LagoonCharts\Http\Livewire\LineChart;
 use Helvetiapps\LagoonCharts\Http\Livewire\PieChart;
+use Helvetiapps\LagoonCharts\Http\Livewire\AreaChart;
+use Helvetiapps\LagoonCharts\Http\Livewire\BarChart;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -19,6 +21,8 @@ class LagoonServiceProvider extends ServiceProvider
     $this->loadViewsFrom(__DIR__.'/../resources/views', 'lagoon');
     Livewire::component('lagoon-line-chart', LineChart::class);
     Livewire::component('lagoon-pie-chart', PieChart::class);
+    Livewire::component('lagoon-area-chart', AreaChart::class);
+    Livewire::component('lagoon-bar-chart', BarChart::class);
 
     if ($this->app->runningInConsole())
     {
