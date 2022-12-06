@@ -46,6 +46,6 @@ class GanttChart extends Component
     public function render()
     {
         $this->random = Carbon::now()->timestamp;
-        return view('lagoon::livewire.area-chart');
+        return view('lagoon::livewire.gantt-chart');
     }
 }
