@@ -8,7 +8,7 @@ class GanttChartTable{
     private $data = [];
 
     public function addTask(string $id, string $name, Carbon $start, Carbon $end, int $duration, int $completion, ?string $dependencies){
-        array_push($data, [
+        array_push($this->data, [
             $id,
             $name,
             "new Date('".$start->year."','".$start->month."','".$start->day."')",
