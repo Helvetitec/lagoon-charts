@@ -12,8 +12,8 @@ class GanttChartTable{
             $id,
             $name,
             null,
-            $start->format('Y-m-d'),
-            $end->format('Y-m-d'),
+            "Date(".$start->format('Y,m,d').")",
+            "Date(".$end->format('Y,m,d').")",
             $duration * 24 * 60 * 60 * 1000,
             $completion,
             $dependencies
