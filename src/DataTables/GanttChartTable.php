@@ -3,6 +3,7 @@
 namespace Helvetiapps\LagoonCharts\DataTables;
 
 use Carbon\Carbon;
+use Helvetiapps\LagoonCharts\Dummies\Date;
 
 class GanttChartTable{
     private $data = [];
@@ -12,8 +13,8 @@ class GanttChartTable{
             $id,
             $name,
             null,
-            new Date(".$start->year.','.($start->month - 1).','.$start->day.",0,0,0,0),
-            new Date(".$end->year.','.($end->month - 1).','.$end->day.",0,0,0,0),
+            new Date($start->year,($start->month - 1),$start->day,0,0,0,0),
+            new Date($end->year,($end->month - 1),$end->day,0,0,0,0),
             $duration * 24 * 60 * 60 * 1000,
             $completion,
             $dependencies
