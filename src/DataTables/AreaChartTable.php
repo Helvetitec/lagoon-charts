@@ -4,7 +4,7 @@ namespace Helvetiapps\LagoonCharts\DataTables;
 
 use Exception;
 
-class LineChartTable{
+class AreaChartTable{
 
     private $data = [];
     private $colCount;
