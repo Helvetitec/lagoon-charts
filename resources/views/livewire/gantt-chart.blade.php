@@ -17,7 +17,7 @@
         google.charts.setOnLoadCallback(drawChart{{ $chartId }});
 
         function drawChart{{ $chartId }}() {
-            var data = new google.visualization.DataTable({ rows: {{ $chartData }} });
+            var data = new google.visualization.DataTable({ rows: {!! $chartData !!} });
 
             data.addColumn('string', 'Task ID');
             data.addColumn('string', 'Task Name');
