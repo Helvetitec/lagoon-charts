@@ -4,6 +4,7 @@ namespace Helvetiapps\LagoonCharts;
 
 use Helvetiapps\LagoonCharts\Http\Livewire\LineChart;
 use Helvetiapps\LagoonCharts\Http\Livewire\PieChart;
+use Helvetiapps\LagoonCharts\Http\Livewire\AreaChart;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
