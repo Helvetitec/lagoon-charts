@@ -17,7 +17,7 @@
         google.charts.setOnLoadCallback(drawChart{{ $chartId }});
 
         function drawChart{{ $chartId }}() {
-            var data = new google.visualization.DataTable();
+            var data = new google.visualization.DataTable({ rows: @json($chartData)});
 
             data.addColumn('string', 'Task ID');
             data.addColumn('string', 'Task Name');
@@ -28,7 +28,7 @@
             data.addColumn('number', 'Percent Complete');
             data.addColumn('string', 'Dependencies');
 
-            data.addRows(@json($chartData));
+            // data.addRows(@json($chartData));
 
             var options = @json($optionsArray);
 
