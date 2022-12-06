@@ -19,6 +19,7 @@ class LagoonServiceProvider extends ServiceProvider
     $this->loadViewsFrom(__DIR__.'/../resources/views', 'lagoon');
     Livewire::component('lagoon-line-chart', LineChart::class);
     Livewire::component('lagoon-pie-chart', PieChart::class);
+    Livewire::component('lagoon-area-chart', AreaChart::class);
 
     if ($this->app->runningInConsole())
     {
