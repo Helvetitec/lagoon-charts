@@ -34,8 +34,9 @@
                 }
             );
 
-            var options = @json($optionsArray);
-
+            @if(count($optionsArray) > 0)
+                var options = @json($optionsArray);
+            @endif
             var chart = new google.visualization.Gantt(document.getElementById('{{ $chartId.$random }}'));
 
             chart.draw(data, options);
