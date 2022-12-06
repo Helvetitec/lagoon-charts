@@ -24,6 +24,7 @@ composer require helvetiapps/lagoon-charts
 * Pie Charts
 * Area Charts
 * Bar Charts
+* Gantt Charts (Preview)
 
 
 ## TODO
@@ -95,4 +96,21 @@ $data = $areaChartTable->toArray();
 Blade
 ```
 @livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
+```
+
+### Gantt Chart
+
+Livewire
+```php
+$ganttChartTable = new GanttChartTable();
+
+$ganttChartTable->addTask("test1", "Test1", Carbon::now(), Carbon::now()->copy()->addMonth(), 30, 100, null);
+$ganttChartTable->addTask("test2", "Test2", Carbon::now()->copy()->addMonth(), Carbon::now()->copy()->addMonths(2), 30, 100, "test1");
+
+$data = $ganttChartTable->__toString(); //IMPORTANT USE __toString() here!
+```
+
+Blade
+```
+@livewire('lagoon-gantt-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'options' => [], key('uniquekey'.now()))
 ```
