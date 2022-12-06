@@ -3,7 +3,6 @@
 namespace Helvetiapps\LagoonCharts\Http\Livewire;
 
 use Carbon\Carbon;
-use Helvetiapps\LagoonCharts\Objects\ChartOptions;
 use Livewire\Component;
 
 class PieChart extends Component
