@@ -6,7 +6,7 @@ use Exception;
 
 class LineChartTable{
 
-    private $data;
+    private $data = [];
     private $colCount;
 
     public function __construct(int $colCount, $rows = [])
