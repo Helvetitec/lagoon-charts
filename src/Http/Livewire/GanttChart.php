@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class GanttChart extends Component
 {
-    public $title = "NO_TITLE";
     public $chartData = [];
 
     public $height;
@@ -24,9 +23,7 @@ class GanttChart extends Component
     public $optionsArray;
 
     public function mount(){
-        $newOptions = [
-            'title' => $this->title,
-        ];
+        $newOptions = [];
 
         if(!is_null($this->height)){
             $newOptions["height"] = $this->height;

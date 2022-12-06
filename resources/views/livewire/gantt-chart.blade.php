@@ -34,17 +34,6 @@
                 }
             );
 
-            // data.addColumn('string', 'Task ID');
-            // data.addColumn('string', 'Task Name');
-            // data.addColumn('string', 'Resource');
-            // data.addColumn('date', 'Start Date');
-            // data.addColumn('date', 'End Date');
-            // data.addColumn('number', 'Duration');
-            // data.addColumn('number', 'Percent Complete');
-            // data.addColumn('string', 'Dependencies');
-
-            // data.addRows(@json($chartData));
-
             var options = @json($optionsArray);
 
             var chart = new google.visualization.Gantt(document.getElementById('{{ $chartId.$random }}'));
