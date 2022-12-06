@@ -9,11 +9,15 @@ class LineChartTable{
     private $data = [];
     private $colCount;
 
-    public function __construct(array $headers, array $rows = [])
+    public function __construct(string $xAxisLabel, array $yAxisLabels, array $rows = [])
     {
-        $this->colCount = count($headers);
+        $this->colCount = count($yAxisLabels) + 1;
         $rowCount = 0;
-        $this->data = [$headers];
+        $labels = [$xAxisLabel];
+        foreach($yAxisLabels as $label){
+            array_push($labels, $label);
+        }
+        $this->data = [$labels];
         foreach($rows as $row){
             $rowCount++;
             if(count($row) != $this->colCount){
