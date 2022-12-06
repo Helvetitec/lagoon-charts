@@ -23,7 +23,9 @@ class GanttChart extends Component
     public $optionsArray;
 
     public function mount(){
-        $newOptions = [];
+        $newOptions = [
+            'title' => 'None'
+        ];
 
         if(!is_null($this->height)){
             $newOptions["height"] = $this->height;
