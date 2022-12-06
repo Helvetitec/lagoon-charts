@@ -7,11 +7,8 @@ use Exception;
 class PieChartTable{
     private $data;
 
-    public function __construct(string $label1, string $label2, $rows = [])
+    public function __construct($rows = [])
     {
-        $this->data = [
-            [$label1, $label2]
-        ];
         foreach($rows as $row){
             if(count($row) != 2){
                 throw new Exception("Number of items inside a Pie Chart row needs to be exactly two!");

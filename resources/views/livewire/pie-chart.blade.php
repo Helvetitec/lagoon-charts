@@ -22,11 +22,9 @@
         function drawChart{{ $chartId }}() {
             // Create the data table.
             var data = new google.visualization.DataTable();
-            @foreach($columns as $cType => $cTitle)
-                data.addColumn('{{ $cType }}', '{{ $cTitle }}');
-            @endforeach
-            // data.addColumn('string', 'Name');
-            // data.addColumn('number', 'Value');
+            data.addColumn('string', '{{ $column1 }}');
+            data.addColumn('number', '{{ $column2 }}');
+
             data.addRows(@json($chartData));
 
             // Set chart options
