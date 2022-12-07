@@ -19,6 +19,8 @@ class LineChart extends Component
     public $random;
 
     public $optionsArray;
+    
+    public $printable = false;
 
     public function mount(){
         $newOptions = [

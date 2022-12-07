@@ -23,6 +23,8 @@ class AreaChart extends Component
 
     public $optionsArray;
 
+    public $printable = false;
+
     public function mount(){
         $newOptions = [
             'title' => $this->title,

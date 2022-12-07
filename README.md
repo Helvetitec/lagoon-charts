@@ -64,7 +64,7 @@ $data = $lineChartTable->toArray();
 
 Blade
 ```
-@livewire('lagoon-line-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
+@livewire('lagoon-line-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => []], key('uniquekey'.now()))
 ```
 
 
@@ -80,7 +80,7 @@ $data = $barChartTable->toArray();
 
 Blade
 ```
-@livewire('lagoon-bar-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
+@livewire('lagoon-bar-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => []], key('uniquekey'.now()))
 ```
 
 
@@ -96,7 +96,7 @@ $data = $columnChartTable->toArray();
 
 Blade
 ```
-@livewire('lagoon-column-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
+@livewire('lagoon-column-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => []], key('uniquekey'.now()))
 ```
 
 
@@ -112,7 +112,7 @@ $data = $areaChartTable->toArray();
 
 Blade
 ```
-@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => []], key('uniquekey'.now()))
 ```
 
 ### Gantt Chart
@@ -129,5 +129,15 @@ $data = $ganttChartTable->__toString(); //IMPORTANT USE __toString() here!
 
 Blade
 ```
-@livewire('lagoon-gantt-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'options' => [], key('uniquekey'.now()))
+@livewire('lagoon-gantt-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'options' => []], key('uniquekey'.now()))
+```
+
+
+### Add link to Chart PNG
+
+You can add a link to a PNG from the chart by adding 'printable' => true, this does only work with corecharts!
+
+Blade
+```
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'printable' => true], key('uniquekey'.now()))
 ```
