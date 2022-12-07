@@ -7,7 +7,7 @@ use Exception;
 
 class TimelineTable{
     private $data = [];
-    private $colCount = 5;
+    private $colCount = 4;
 
     public function __construct()
     {
