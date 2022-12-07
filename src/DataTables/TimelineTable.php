@@ -36,9 +36,9 @@ class TimelineTable{
             $count++;
 
             $str .= "{c: [";
-            $str .= "{v: '".$item[0]."'}";
-            $str .= "{v: '".$item[1]."'}";
-            $str .= "{v: new Date(".$item[2]->year.",".$item[2]->month.",".$item[2]->day.",".$item[2]->hour.",".$item[2]->minute.",".$item[2]->second.")}";
+            $str .= "{v: '".$item[0]."'},";
+            $str .= "{v: '".$item[1]."'},";
+            $str .= "{v: new Date(".$item[2]->year.",".$item[2]->month.",".$item[2]->day.",".$item[2]->hour.",".$item[2]->minute.",".$item[2]->second.")},";
             $str .= "{v: new Date(".$item[3]->year.",".$item[3]->month.",".$item[3]->day.",".$item[3]->hour.",".$item[3]->minute.",".$item[3]->second.")}";
             $str .= "]}";
         }
