@@ -14,11 +14,10 @@ class TimelineTable{
 
     }
 
-    public function addItem(string $rowLabel, string $barLabel, string $tooltip, Carbon $start, Carbon $end){
+    public function addItem(string $rowLabel, string $barLabel, Carbon $start, Carbon $end){
         $rowContent = [
             $rowLabel,
             $barLabel,
-            $tooltip,
             "Date(".$start->year.','.($start->month - 1).','.$start->day.")",
             "Date(".$end->year.','.($end->month - 1).','.$end->day.")"
         ];

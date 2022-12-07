@@ -23,7 +23,6 @@
                     [
                         {id: 'rowLabel', label: 'Row Label', type: 'string'},
                         {id: 'barLabel', label: 'Bar Label', type: 'string'},
-                        {id: 'tooltip', label: 'Tooltip', type: 'string'},
                         {id: 'start', label: 'Start Date', type: 'date'},
                         {id: 'end', label: 'End Date', type: 'date'}
                     ],
