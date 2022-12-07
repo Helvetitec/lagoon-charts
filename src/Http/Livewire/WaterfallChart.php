@@ -5,7 +5,7 @@ namespace Helvetiapps\LagoonCharts\Http\Livewire;
 use Carbon\Carbon;
 use Livewire\Component;
 
-class CandlestickChart extends Component
+class WaterfallChart extends Component
 {
     public $title = "NO_TITLE";
     public $chartData = [];

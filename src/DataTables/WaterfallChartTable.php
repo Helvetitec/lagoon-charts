@@ -19,11 +19,14 @@ class WaterfallChartTable{
             if(count($row) != $this->colCount){
                 throw new Exception("Row ".$rowCount." has ".count($row)." columns but needs to have ".$this->colCount."!");
             }
-            array_push($this->data, $row);
+            array_push($this->data, $rows);
         }
     }
 
     public function addRow(string $label, $min, $max){
+        if($min > $max){
+            throw new Exception("The minimum valueu is bigger than the maximum value!");
+        }
         array_push($this->data, [$label, $min, $min, $max, $max]);
     }
 
