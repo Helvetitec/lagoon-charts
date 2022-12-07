@@ -20,10 +20,13 @@ composer require helvetiapps/lagoon-charts
 
 ## Included Charts
 
-* Line Charts
-* Pie Charts
+
 * Area Charts
 * Bar Charts
+* Canldestick Charts
+* Column Charts
+* Line Charts
+* Pie Charts
 * Gantt Charts (Preview)
 
 
