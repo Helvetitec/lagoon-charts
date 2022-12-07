@@ -83,6 +83,23 @@ Blade
 @livewire('lagoon-bar-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
 ```
 
+
+### Bar Chart
+
+Livewire
+```php
+$columnChartTable = new \HelvetiApps\LagoonCharts\DataTables\ColumnChartTable('xAxis', ['yAxis1', 'yAxis2']);
+$columnChartTable->addRow([1, 100, 200]);
+$columnChartTable->addRow([2, 200, 100]);
+$data = $columnChartTable->toArray();
+```
+
+Blade
+```
+@livewire('lagoon-column-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], key('uniquekey'.now()))
+```
+
+
 ### Area Chart
 
 Livewire
