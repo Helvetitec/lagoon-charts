@@ -2,7 +2,7 @@
     "name": "helvetiapps/lagoon-charts",
     "description": "Google Charts for Laravel Livewire",
     "type": "library",
-    "license": "proprietary",
+    "license": "GPL-3.0",
     "autoload": {
         "psr-4": {
             "Helvetiapps\\LagoonCharts\\": "src/"
