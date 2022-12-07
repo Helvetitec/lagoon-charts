@@ -68,6 +68,22 @@ Blade
 ```
 
 
+### Candlestick Chart
+
+Livewire
+```php
+$candlestickChartTable = new \HelvetiApps\LagoonCharts\DataTables\CandlestickChartTable();
+$candlestickChartTable->addRow([1, 100, 200]);
+$candlestickChartTable->addRow([2, 200, 100]);
+$data = $candlestickChartTable->toArray();
+```
+
+Blade
+```
+@livewire('lagoon-candlestick-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => []], key('uniquekey'.now()))
+```
+
+
 ### Bar Chart
 
 Livewire
@@ -84,7 +100,7 @@ Blade
 ```
 
 
-### Bar Chart
+### Column Chart
 
 Livewire
 ```php
@@ -130,6 +146,17 @@ $data = $ganttChartTable->__toString(); //IMPORTANT USE __toString() here!
 Blade
 ```
 @livewire('lagoon-gantt-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'options' => []], key('uniquekey'.now()))
+```
+
+
+### Add options to the Charts
+
+You can add options with the 'options' => ['option1' => 'something'] variable.
+You can add all options that are inside the respective Google Chart.
+
+Blade
+```
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => ['backgroundColor' => 'black']], key('uniquekey'.now()))
 ```
 
 
