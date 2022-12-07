@@ -35,6 +35,7 @@ composer require helvetiapps/lagoon-charts
 
 * Add HTML Tooltips as custom class
 * Add all types of Charts
+* Add events to the charts when user clicks on the chart etc.
 
 
 ## Usage
