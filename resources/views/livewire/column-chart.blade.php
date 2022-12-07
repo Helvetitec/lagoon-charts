@@ -23,7 +23,7 @@
 
           var options = @json($optionsArray);
 
-          var chart = new google.visualization.BarChart(document.getElementById('{{ $chartId.$random }}'));
+          var chart = new google.visualization.ColumnChart(document.getElementById('{{ $chartId.$random }}'));
 
           chart.draw(data, options);
 

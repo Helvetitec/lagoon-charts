@@ -5,9 +5,8 @@ namespace Helvetiapps\LagoonCharts\Http\Livewire;
 use Carbon\Carbon;
 use Livewire\Component;
 
-class AreaChart extends Component
+class GanttChart extends Component
 {
-    public $title = "NO_TITLE";
     public $chartData = [];
 
     public $height;
@@ -23,11 +22,9 @@ class AreaChart extends Component
 
     public $optionsArray;
 
-    public $printable = false;
-
     public function mount(){
         $newOptions = [
-            'title' => $this->title,
+            'title' => 'None'
         ];
 
         if(!is_null($this->height)){
@@ -48,6 +45,6 @@ class AreaChart extends Component
     public function render()
     {
         $this->random = Carbon::now()->timestamp;
-        return view('lagoon::livewire.area-chart');
+        return view('lagoon::livewire.gantt-chart');
     }
 }

@@ -23,7 +23,7 @@
 
           var options = @json($optionsArray);
 
-          var chart = new google.visualization.BarChart(document.getElementById('{{ $chartId.$random }}'));
+          var chart = new google.visualization.CandlestickChart(document.getElementById('{{ $chartId.$random }}'));
 
           chart.draw(data, options);
 
@@ -35,6 +35,6 @@
 
     <div id="{{ $chartId.$random }}" style="height: 100%; width: 100%;"></div>
     @if($printable)
-        <div id="lagoon-printable-{{ $chartId.$random }}"></div>
+      <div id="lagoon-printable-{{ $chartId.$random }}"></div>
     @endif
 </div>

@@ -5,7 +5,7 @@ namespace Helvetiapps\LagoonCharts\Http\Livewire;
 use Carbon\Carbon;
 use Livewire\Component;
 
-class AreaChart extends Component
+class ColumnChart extends Component
 {
     public $title = "NO_TITLE";
     public $chartData = [];
@@ -22,7 +22,7 @@ class AreaChart extends Component
     public $random;
 
     public $optionsArray;
-
+    
     public $printable = false;
 
     public function mount(){
@@ -48,6 +48,6 @@ class AreaChart extends Component
     public function render()
     {
         $this->random = Carbon::now()->timestamp;
-        return view('lagoon::livewire.area-chart');
+        return view('lagoon::livewire.column-chart');
     }
 }

@@ -26,8 +26,15 @@
           var chart = new google.visualization.LineChart(document.getElementById('{{ $chartId.$random }}'));
 
           chart.draw(data, options);
+
+          @if($printable)
+            document.getElementById('lagoon-printable-{{ $chartId.$random }}').outerHTML = '<div style="display: flex; justify-content: center;"><a href="' + chart.getImageURI() + '">Print</a></div>';
+          @endif
         }
     </script>
 
     <div id="{{ $chartId.$random }}" style="height: 100%; width: 100%;"></div>
+    @if($printable)
+      <div id="lagoon-printable-{{ $chartId.$random }}"></div>
+    @endif
 </div>
