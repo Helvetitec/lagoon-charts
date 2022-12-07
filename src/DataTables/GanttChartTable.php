@@ -7,6 +7,18 @@ use Carbon\Carbon;
 class GanttChartTable{
     private $data = [];
 
+    /**
+     * Adds a new Task to the GanttChartTable
+     *
+     * @param string $id The ID of the Task
+     * @param string $name The name of the Task displayed in the tooltip
+     * @param Carbon $start The start date of the task
+     * @param Carbon $end The end date of the task
+     * @param integer $duration The duration of the task in days
+     * @param integer $completion The percentage of completion of the task
+     * @param string|null $dependencies The depencies of the task as string
+     * @return void
+     */
     public function addTask(string $id, string $name, Carbon $start, Carbon $end, int $duration, int $completion, ?string $dependencies){
         array_push($this->data, [
             $id,
@@ -20,6 +32,12 @@ class GanttChartTable{
         ]);
     }
 
+    /**
+     * Returns a JSON representation of the rows.
+     * Use this function to load the data inside the chart.
+     * 
+     * @return string
+     */
     public function __toString()
     {
         $str = "[";
@@ -38,6 +56,11 @@ class GanttChartTable{
         return $str;
     }
 
+    /**
+     * Returns an array of the rows.
+     *
+     * @return array
+     */
     public function toArray():array{
         return $this->data;
     }

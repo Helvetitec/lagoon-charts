@@ -9,11 +9,25 @@ class TimelineTable{
     private $data = [];
     private $withTime;
 
+    /**
+     * Creates a new TimelineTable
+     *
+     * @param boolean $withTime If set to true, the dates will be added with time as well
+     */
     public function __construct(bool $withTime = false)
     {
         $this->withTime = $withTime;
     }
 
+    /**
+     * Adds a new item to the table
+     *
+     * @param string $rowLabel The label of the row
+     * @param string $barLabel The label of the bar
+     * @param Carbon $start The start datetime of the item
+     * @param Carbon $end The end datetime of the item
+     * @return void
+     */
     public function addItem(string $rowLabel, string $barLabel, Carbon $start, Carbon $end){
         $rowContent = [
             $rowLabel,
@@ -24,6 +38,12 @@ class TimelineTable{
         array_push($this->data, $rowContent);
     }
 
+    /**
+     * Returns a JSON representation of the rows.
+     * Use this function to load the data inside the chart.
+     * 
+     * @return string
+     */
     public function __toString()
     {
         $str = "[";
@@ -54,6 +74,11 @@ class TimelineTable{
         return $str;
     }
 
+    /**
+     * Returns an array of the rows.
+     *
+     * @return array
+     */
     public function toArray():array{
         return $this->data;
     }
