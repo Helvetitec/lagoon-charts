@@ -35,6 +35,6 @@
 
     <div id="{{ $chartId.$random }}" style="height: 100%; width: 100%;"></div>
     @if($printable)
-        <div id="lagoon-printable-{{ $chartId.$random }}"></div>
+        <div id="lagoon-printable-{{ $chartId.$random }}" style="text-align: center;"></div>
     @endif
 </div>
