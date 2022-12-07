@@ -35,13 +35,13 @@
             chart.draw(data, options);
 
             @if($printable)
-                document.getElementById('lagoon-printable-{{ $chartId.$random }}').outerHTML = '<a href="' + chart.getImageURI() + '">Print</a>';
+                document.getElementById('lagoon-printable-{{ $chartId.$random }}').outerHTML = '<a href="' + chart.getImageURI() + '" style="text-align: center;">Print</a>';
             @endif
         }
     </script>
 
     <div id="{{ $chartId.$random }}" style="height: 100%; width: 100%;"></div>
     @if($printable)
-        <div id="lagoon-printable-{{ $chartId.$random }}" style="text-align: center;"></div>
+        <div id="lagoon-printable-{{ $chartId.$random }}"></div>
     @endif
 </div>
