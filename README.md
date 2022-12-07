@@ -27,6 +27,7 @@ composer require helvetiapps/lagoon-charts
 * Column Charts
 * Line Charts
 * Pie Charts
+* Waterfall Charts
 * Gantt Charts (Preview)
 
 
@@ -84,6 +85,22 @@ $data = $candlestickChartTable->toArray();
 Blade
 ```
 @livewire('lagoon-candlestick-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => []], key('uniquekey'.now()))
+```
+
+
+### Waterfall Chart
+
+Livewire
+```php
+$waterfallChartTable = new \HelvetiApps\LagoonCharts\DataTables\WaterfallChartTable();
+$waterfallChartTable->addRow("Mon", 100, 200);
+$waterfallChartTable->addRow("Tue", 200, 300);
+$data = $waterfallChartTable->toArray();
+```
+
+Blade
+```
+@livewire('lagoon-waterfall-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => []], key('uniquekey'.now()))
 ```
 
 

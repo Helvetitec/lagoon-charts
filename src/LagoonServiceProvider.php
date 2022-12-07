@@ -9,6 +9,7 @@ use Helvetiapps\LagoonCharts\Http\Livewire\BarChart;
 use Helvetiapps\LagoonCharts\Http\Livewire\CandlestickChart;
 use Helvetiapps\LagoonCharts\Http\Livewire\ColumnChart;
 use Helvetiapps\LagoonCharts\Http\Livewire\GanttChart;
+use Helvetiapps\LagoonCharts\Http\Livewire\WaterfallChart;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -29,6 +30,7 @@ class LagoonServiceProvider extends ServiceProvider
     Livewire::component('lagoon-gantt-chart', GanttChart::class);
     Livewire::component('lagoon-gantt-chart', ColumnChart::class);
     Livewire::component('lagoon-candlestick-chart', CandlestickChart::class);
+    Livewire::component('lagoon-waterfall-chart', WaterfallChart::class);
 
     if ($this->app->runningInConsole())
     {
