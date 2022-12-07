@@ -28,6 +28,7 @@ composer require helvetiapps/lagoon-charts
 * Line Charts
 * Pie Charts
 * Waterfall Charts
+* Timelines
 * Gantt Charts (Preview)
 
 
@@ -35,6 +36,7 @@ composer require helvetiapps/lagoon-charts
 
 * Add HTML Tooltips as custom class
 * Add all types of Charts
+* Add events to the charts when user clicks on the chart etc.
 
 
 ## Usage
@@ -166,6 +168,23 @@ $data = $ganttChartTable->__toString(); //IMPORTANT USE __toString() here!
 Blade
 ```
 @livewire('lagoon-gantt-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'options' => []], key('uniquekey'.now()))
+```
+
+### Timeline
+
+Livewire
+```php
+$timelineTable = new TimelineTable(true); //The parameter sets if the hours, minutes and seconds should be included in the date
+
+$timelineTable->addTask("Person 1", "Project 1", Carbon::now(), Carbon::now()->copy()->addHour());
+$timelineTable->addTask("Person 2", "Project 1", Carbon::now()->copy()->addHour(), Carbon::now()->copy()->addHours(2));
+
+$data = $timelineTable->__toString(); //IMPORTANT USE __toString() here!
+```
+
+Blade
+```
+@livewire('lagoon-timeline', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'options' => []], key('uniquekey'.now()))
 ```
 
 
