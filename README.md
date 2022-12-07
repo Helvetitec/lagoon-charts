@@ -23,7 +23,7 @@ composer require helvetiapps/lagoon-charts
 
 * Area Charts
 * Bar Charts
-* Canldestick Charts
+* Candlestick Charts
 * Column Charts
 * Line Charts
 * Pie Charts
