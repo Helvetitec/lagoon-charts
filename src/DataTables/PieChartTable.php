@@ -7,6 +7,10 @@ use Exception;
 class PieChartTable{
     private $data = [];
 
+    /**
+     * Creates a new PieChartTable
+     * @param array $rows The rows added to the table, All rows need to have a name and a value!
+     */
     public function __construct($rows = [])
     {
         foreach($rows as $row){
@@ -23,6 +27,13 @@ class PieChartTable{
         }
     }
 
+    /**
+     * Adds a new row to the table
+     *
+     * @param string $name The name of the row shown in the tooltip
+     * @param [type] $value The value fo the row shown in the tooltip. Needs to be numeric!
+     * @return void
+     */
     public function addRow(string $name, $value){
         if(!is_numeric($value)){
             throw new Exception("The second value of the row in a Pie Chart needs to be a number!");
@@ -30,11 +41,22 @@ class PieChartTable{
         array_push($this->data, [$name, $value]);
     }
 
+    /**
+     * Returns a JSON representation of the rows
+     *
+     * @return string
+     */
     public function __toString()
     {
         return json_encode($this->data);
     }
 
+    /**
+     * Returns an array of the rows.
+     * Use this function to load the data inside the chart.
+     *
+     * @return array
+     */
     public function toArray():array{
         return $this->data;
     }

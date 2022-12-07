@@ -9,6 +9,11 @@ class CandlestickChartTable{
     private $data = [];
     private $colCount;
 
+    /**
+     * Creates a new CandlestickChartTable
+     *
+     * @param array $rows The rows added to the table, all rows need to have the same amount of columns as the first row in the array
+     */
     public function __construct(array $rows = [])
     {
         $this->colCount = count($rows) < 1 ? 0 : count($rows[0]);
@@ -24,6 +29,12 @@ class CandlestickChartTable{
         }
     }
 
+    /**
+     * Adds a new row to the table. Remember that each row needs to have the same amount of columns
+     *
+     * @param array $row The array of columns added to the row
+     * @return void
+     */
     public function addRow(array $row){
         if($this->colCount == 0){
             $this->colCount = count($row);
@@ -34,11 +45,22 @@ class CandlestickChartTable{
         array_push($this->data, $row);
     }
 
+    /**
+     * Returns a JSON representation of the rows
+     *
+     * @return string
+     */
     public function __toString()
     {
         return json_encode($this->data);
     }
 
+    /**
+     * Returns an array of the rows.
+     * Use this function to load the data inside the chart.
+     *
+     * @return array
+     */
     public function toArray():array{
         return $this->data;
     }
