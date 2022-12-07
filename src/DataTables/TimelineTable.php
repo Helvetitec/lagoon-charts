@@ -18,8 +18,8 @@ class TimelineTable{
         $rowContent = [
             $rowLabel,
             $barLabel,
-            "Date(".$start->year.','.($start->month - 1).','.$start->day.")",
-            "Date(".$end->year.','.($end->month - 1).','.$end->day.")"
+            $start,
+            $end
         ];
         array_push($this->data, $rowContent);
     }
@@ -36,12 +36,10 @@ class TimelineTable{
             $count++;
 
             $str .= "{c: [";
-            for($i = 0; $i < $this->colCount; $i++){
-                if($i > 0){
-                    $str .= ",";
-                }
-                $str .= "{v: '".$item[$i]."'}";
-            }
+            $str .= "{v: '".$item[0]."'}";
+            $str .= "{v: '".$item[1]."'}";
+            $str .= "{v: new Date(".$item[2]->year.",".$item[2]->month.",".$item[2]->day.",".$item[2]->hour.",".$item[2]->minute.",".$item[2]->second.")}";
+            $str .= "{v: new Date(".$item[3]->year.",".$item[3]->month.",".$item[3]->day.",".$item[3]->hour.",".$item[3]->minute.",".$item[3]->second.")}";
             $str .= "]}";
         }
 
