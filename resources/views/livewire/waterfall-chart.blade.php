@@ -29,6 +29,10 @@
             {!! $action !!}
           @endforeach
 
+          @foreach($events as $event)
+            {!! $event !!}
+          @endforeach
+
           chart.draw(data, options);
 
           @if($printable)
