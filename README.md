@@ -1,5 +1,5 @@
 # Lagoon Charts
-Google Charts for Laravel Livewire
+[Google Charts](https://developers.google.com/chart/interactive/docs) for Laravel [Livewire](https://laravel-livewire.com/)
 
 **Warning: This is a very early version of the library and changes on the codebase WILL be made**
 
@@ -32,12 +32,17 @@ composer require helvetiapps/lagoon-charts
 * Gantt Charts (Preview)
 
 
+## Included Functions
+
+* Actions (Preview)
+* Events (Selected, Ready, Error)
+
+
 ## TODO
 
 * Add HTML Tooltips as custom class
 * Add custom Tooltips
 * Add all types of Charts
-* Add events to the charts when user clicks on the chart etc.
 
 
 ## Usage
