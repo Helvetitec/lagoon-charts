@@ -25,6 +25,10 @@
 
           var chart = new google.visualization.LineChart(document.getElementById('{{ $chartId.$random }}'));
 
+          @foreach($actions as $action)
+            {!! $action !!}
+          @endforeach
+
           chart.draw(data, options);
 
           @if($printable)

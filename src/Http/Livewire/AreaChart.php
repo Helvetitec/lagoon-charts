@@ -23,6 +23,8 @@ class AreaChart extends Component
 
     public $optionsArray;
 
+    public $actions;
+
     public $printable = false;
 
     public function mount(){
@@ -41,7 +43,6 @@ class AreaChart extends Component
                 $newOptions[$key] = $value;
             }
         }
-
         $this->optionsArray = $newOptions;
     }
 

@@ -20,6 +20,8 @@ class LineChart extends Component
 
     public $optionsArray;
     
+    public $actions;
+    
     public $printable = false;
 
     public function mount(){

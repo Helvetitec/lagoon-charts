@@ -32,6 +32,11 @@
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('{{ $chartId.$random }}'));
+
+            @foreach($actions as $action)
+            {!! $action !!}
+            @endforeach
+
             chart.draw(data, options);
 
             @if($printable)
