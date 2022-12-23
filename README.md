@@ -223,11 +223,15 @@ $switchAction->addAction("alert('hello world!');"); //Adds a single javascript a
 $switchAction->addActionAt(0, "alert('hello world, again!');"); //Adds a single javascript action to a specific index
 
 $switchStr = $switchAction->__toString();
+
+$actions = [
+    $switchStr
+];
 ```
 
 Blade
 ```
-@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'actions' => $switchStr], key('uniquekey'.now()))
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'actions' => $actions], key('uniquekey'.now()))
 ```
 
 
@@ -246,9 +250,9 @@ $errorEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonChart
 $selectEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Select, "alert(selection[0][0]);");
 
 $eventArr = [
-    'ready' => $readyEvent,
-    'error' => $errorEvent,
-    'select' => $selectEvent
+    'ready' => $readyEvent->__toString(),
+    'error' => $errorEvent->__toString(),
+    'select' => $selectEvent->__toString()
 ];
 ```
 
