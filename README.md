@@ -208,3 +208,24 @@ Blade
 ```
 @livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'printable' => true], key('uniquekey'.now()))
 ```
+
+
+### Using Actions
+
+You can use actions inside the charts by adding the SwitchAction object.
+
+PHP
+```php
+$switchAction = new \Helvetiapps\LagoonCharts\Actions\SwitchAction("action", "Test Action");
+
+$switchAction->addAction("alert('hello world!');"); //Adds a single javascript action to the list (starting at index 0)
+
+$switchAction->addActionAt(0, "alert('hello world, again!');"); //Adds a single javascript action to a specific index
+
+$switchStr = $switchAction->__toString();
+```
+
+Blade
+```
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'actions' => $switchStr], key('uniquekey'.now()))
+```
