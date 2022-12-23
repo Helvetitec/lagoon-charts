@@ -229,3 +229,30 @@ Blade
 ```
 @livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'actions' => $switchStr], key('uniquekey'.now()))
 ```
+
+
+### Using Events
+
+You can use events inside the charts to interact with the charts and the data within
+
+PHP
+```php
+$readyEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Ready, "alert('hello, i\'m ready');");
+
+//The error event will include an err variable
+$errorEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Error, "alert('ops!' + err);");
+
+//The select event will include a selection variable, which represents chart.getSelection();
+$selectEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Select, "alert(selection[0][0]);");
+
+$eventArr = [
+    'ready' => $readyEvent,
+    'error' => $errorEvent,
+    'select' => $selectEvent
+];
+```
+
+Blade
+```
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'events' => $eventArr], key('uniquekey'.now()))
+```
