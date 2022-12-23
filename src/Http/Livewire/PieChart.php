@@ -28,6 +28,10 @@ class PieChart extends Component
     public $printable = false;
 
     public function mount(){
+        if(is_null($this->actions) || !is_array($this->actions)){
+            $this->actions = [];
+        }
+        
         $newOptions = [
             'title' => $this->title,
         ];
