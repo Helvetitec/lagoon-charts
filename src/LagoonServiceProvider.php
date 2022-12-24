@@ -29,7 +29,7 @@ class LagoonServiceProvider extends ServiceProvider
     Livewire::component('lagoon-area-chart', AreaChart::class);
     Livewire::component('lagoon-bar-chart', BarChart::class);
     Livewire::component('lagoon-gantt-chart', GanttChart::class);
-    Livewire::component('lagoon-gantt-chart', ColumnChart::class);
+    Livewire::component('lagoon-column-chart', ColumnChart::class);
     Livewire::component('lagoon-candlestick-chart', CandlestickChart::class);
     Livewire::component('lagoon-waterfall-chart', WaterfallChart::class);
     Livewire::component('lagoon-timeline', Timeline::class);
