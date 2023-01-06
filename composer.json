@@ -15,6 +15,7 @@
             ]
         }
     },
-    "minimum-stability": "dev",
-    "require": {}
+    "require-dev": {
+        "orchestra/testbench": "7"
+    }
 }
