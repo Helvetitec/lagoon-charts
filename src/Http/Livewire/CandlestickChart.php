@@ -24,6 +24,7 @@ class CandlestickChart extends Component
     public $events;
     
     public $printable = false;
+    public $printButtonText = 'Print';
 
     public function mount(){
         if(is_null($this->actions) || !is_array($this->actions)){

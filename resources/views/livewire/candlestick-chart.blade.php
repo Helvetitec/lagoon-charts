@@ -36,7 +36,7 @@
           chart.draw(data, options);
 
           @if($printable)
-            document.getElementById('lagoon-printable-{{ $chartId.$random }}').outerHTML = '<div style="display: flex; justify-content: center;"><a href="' + chart.getImageURI() + '" target="_blank">Print</a></div>';
+            document.getElementById('lagoon-printable-{{ $chartId.$random }}').outerHTML = '<div style="display: flex; justify-content: center;"><a href="' + chart.getImageURI() + '" target="_blank">{{ $printButtonText }}</a></div>';
           @endif
         }
     </script>
