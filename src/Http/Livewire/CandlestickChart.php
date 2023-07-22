@@ -20,9 +20,20 @@ class CandlestickChart extends Component
 
     public $optionsArray;
     
+    public $actions;
+    public $events;
+    
     public $printable = false;
+    public $printButtonText = 'Print';
 
     public function mount(){
+        if(is_null($this->actions) || !is_array($this->actions)){
+            $this->actions = [];
+        }
+        if(is_null($this->events) || !is_array($this->events)){
+            $this->events = [];
+        }
+        
         $newOptions = [
             'title' => $this->title,
         ];

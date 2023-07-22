@@ -1,5 +1,5 @@
 # Lagoon Charts
-Google Charts for Laravel Livewire
+[Google Charts](https://developers.google.com/chart/interactive/docs) for Laravel [Livewire](https://laravel-livewire.com/)
 
 **Warning: This is a very early version of the library and changes on the codebase WILL be made**
 
@@ -32,12 +32,17 @@ composer require helvetiapps/lagoon-charts
 * Gantt Charts (Preview)
 
 
+## Included Functions
+
+* Actions (Preview)
+* Events (Selected, Ready, Error)
+
+
 ## TODO
 
 * Add HTML Tooltips as custom class
 * Add custom Tooltips
 * Add all types of Charts
-* Add events to the charts when user clicks on the chart etc.
 
 
 ## Usage
@@ -207,4 +212,56 @@ You can add a link to a PNG from the chart by adding 'printable' => true, this d
 Blade
 ```
 @livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'printable' => true], key('uniquekey'.now()))
+```
+
+
+### Using Actions
+
+You can use actions inside the charts by adding the SwitchAction object.
+
+PHP
+```php
+$switchAction = new \Helvetiapps\LagoonCharts\Actions\SwitchAction("action", "Test Action");
+
+$switchAction->addAction("alert('hello world!');"); //Adds a single javascript action to the list (starting at index 0)
+
+$switchAction->addActionAt(0, "alert('hello world, again!');"); //Adds a single javascript action to a specific index
+
+$switchStr = $switchAction->__toString();
+
+$actions = [
+    $switchStr
+];
+```
+
+Blade
+```
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'actions' => $actions], key('uniquekey'.now()))
+```
+
+
+### Using Events
+
+You can use events inside the charts to interact with the charts and the data within
+
+PHP
+```php
+$readyEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Ready, "alert('hello, i\'m ready');");
+
+//The error event will include an err variable
+$errorEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Error, "alert('ops!' + err);");
+
+//The select event will include a selection variable, which represents chart.getSelection();
+$selectEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Select, "alert(selection[0][0]);");
+
+$eventArr = [
+    'ready' => $readyEvent->__toString(),
+    'error' => $errorEvent->__toString(),
+    'select' => $selectEvent->__toString()
+];
+```
+
+Blade
+```
+@livewire('lagoon-area-chart', ['chartId' => 'uniqueID', 'chartData' => $data, 'height' => 300, 'width' => 400, 'title' => 'Title', 'options' => [], 'events' => $eventArr], key('uniquekey'.now()))
 ```

@@ -25,10 +25,18 @@
 
           var chart = new google.visualization.LineChart(document.getElementById('{{ $chartId.$random }}'));
 
+          @foreach($actions as $action)
+            {!! $action !!}
+          @endforeach
+
+          @foreach($events as $event)
+            {!! $event !!}
+          @endforeach
+
           chart.draw(data, options);
 
           @if($printable)
-            document.getElementById('lagoon-printable-{{ $chartId.$random }}').outerHTML = '<div style="display: flex; justify-content: center;"><a href="' + chart.getImageURI() + '">Print</a></div>';
+            document.getElementById('lagoon-printable-{{ $chartId.$random }}').outerHTML = '<div style="display: flex; justify-content: center;"><a href="' + chart.getImageURI() + '" target="_blank">{{ $printButtonText }}</a></div>';
           @endif
         }
     </script>
