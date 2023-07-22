@@ -1,48 +1,46 @@
 # Lagoon Charts
 [Google Charts](https://developers.google.com/chart/interactive/docs) for Laravel [Livewire](https://laravel-livewire.com/)
 
-**Warning: This is a very early version of the library and changes on the codebase WILL be made**
-
 
 ## Requirements
 
 * Laravel 9+
-* Livewire 2+
+* Livewire 3+
 
 
 ## Installation
 
 Run composer:
 ```
-composer require helvetiapps/lagoon-charts
+composer require helvetitec/lagoon-charts:~2.0
+```
+
+For Livewire 2:
+```
+composer require helvetitec/lagoon-charts:~1.0
 ```
 
 
 ## Included Charts
 
 
-* Area Charts
-* Bar Charts
-* Candlestick Charts
-* Column Charts
-* Line Charts
-* Pie Charts
-* Waterfall Charts
-* Timelines
-* Gantt Charts (Preview)
-
+[ ] Area Charts
+[ ] Bar Charts
+[ ] Candlestick Charts
+[ ] Column Charts
+[ ] Line Charts
+[ ] Pie Charts
+[ ] Waterfall Charts
+[ ] Timelines
+[ ] Gantt Charts
+[ ] Other Charts
 
 ## Included Functions
 
-* Actions (Preview)
-* Events (Selected, Ready, Error)
-
-
-## TODO
-
-* Add HTML Tooltips as custom class
-* Add custom Tooltips
-* Add all types of Charts
+[ ] Actions
+[ ] Events (Selected, Ready, Error)
+[ ] Custom Tooltips
+[ ] HTML Tooltips
 
 
 ## Usage
@@ -52,7 +50,7 @@ composer require helvetiapps/lagoon-charts
 
 Livewire
 ```php
-$pieChartTable = new \HelvetiApps\LagoonCharts\DataTables\PieChartTable();
+$pieChartTable = new \Helvetitec\LagoonCharts\DataTables\PieChartTable();
 $pieChartTable->addRow("Row1", 20);
 $pieChartTable->addRow("Row2", 30);
 $data = $pieChartTable->toArray();
@@ -68,7 +66,7 @@ Blade
 
 Livewire
 ```php
-$lineChartTable = new \HelvetiApps\LagoonCharts\DataTables\LineChartTable('xAxis', ['yAxis1', 'yAxis2']);
+$lineChartTable = new \Helvetitec\LagoonCharts\DataTables\LineChartTable('xAxis', ['yAxis1', 'yAxis2']);
 $lineChartTable->addRow([1, 100, 200]);
 $lineChartTable->addRow([2, 200, 100]);
 $data = $lineChartTable->toArray();
@@ -84,7 +82,7 @@ Blade
 
 Livewire
 ```php
-$candlestickChartTable = new \HelvetiApps\LagoonCharts\DataTables\CandlestickChartTable();
+$candlestickChartTable = new \Helvetitec\LagoonCharts\DataTables\CandlestickChartTable();
 $candlestickChartTable->addRow([1, 100, 200]);
 $candlestickChartTable->addRow([2, 200, 100]);
 $data = $candlestickChartTable->toArray();
@@ -100,7 +98,7 @@ Blade
 
 Livewire
 ```php
-$waterfallChartTable = new \HelvetiApps\LagoonCharts\DataTables\WaterfallChartTable();
+$waterfallChartTable = new \Helvetitec\LagoonCharts\DataTables\WaterfallChartTable();
 $waterfallChartTable->addRow("Mon", 100, 200);
 $waterfallChartTable->addRow("Tue", 200, 300);
 $data = $waterfallChartTable->toArray();
@@ -116,7 +114,7 @@ Blade
 
 Livewire
 ```php
-$barChartTable = new \HelvetiApps\LagoonCharts\DataTables\BarChartTable('xAxis', ['yAxis1', 'yAxis2']);
+$barChartTable = new \Helvetitec\LagoonCharts\DataTables\BarChartTable('xAxis', ['yAxis1', 'yAxis2']);
 $barChartTable->addRow([1, 100, 200]);
 $barChartTable->addRow([2, 200, 100]);
 $data = $barChartTable->toArray();
@@ -132,7 +130,7 @@ Blade
 
 Livewire
 ```php
-$columnChartTable = new \HelvetiApps\LagoonCharts\DataTables\ColumnChartTable('xAxis', ['yAxis1', 'yAxis2']);
+$columnChartTable = new \Helvetitec\LagoonCharts\DataTables\ColumnChartTable('xAxis', ['yAxis1', 'yAxis2']);
 $columnChartTable->addRow([1, 100, 200]);
 $columnChartTable->addRow([2, 200, 100]);
 $data = $columnChartTable->toArray();
@@ -148,7 +146,7 @@ Blade
 
 Livewire
 ```php
-$areaChartTable = new \HelvetiApps\LagoonCharts\DataTables\AreaChartTable('xAxis', ['yAxis1', 'yAxis2']);
+$areaChartTable = new \Helvetitec\LagoonCharts\DataTables\AreaChartTable('xAxis', ['yAxis1', 'yAxis2']);
 $areaChartTable->addRow([1, 100, 200]);
 $areaChartTable->addRow([2, 200, 100]);
 $data = $areaChartTable->toArray();
@@ -221,7 +219,7 @@ You can use actions inside the charts by adding the SwitchAction object.
 
 PHP
 ```php
-$switchAction = new \Helvetiapps\LagoonCharts\Actions\SwitchAction("action", "Test Action");
+$switchAction = new \Helvetitec\LagoonCharts\Actions\SwitchAction("action", "Test Action");
 
 $switchAction->addAction("alert('hello world!');"); //Adds a single javascript action to the list (starting at index 0)
 
@@ -246,13 +244,13 @@ You can use events inside the charts to interact with the charts and the data wi
 
 PHP
 ```php
-$readyEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Ready, "alert('hello, i\'m ready');");
+$readyEvent = new \Helvetitec\LagoonCharts\Utils\Event(\Helvetitec\LagoonCharts\Utils\EventType::Ready, "alert('hello, i\'m ready');");
 
 //The error event will include an err variable
-$errorEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Error, "alert('ops!' + err);");
+$errorEvent = new \Helvetitec\LagoonCharts\Utils\Event(\Helvetitec\LagoonCharts\Utils\EventType::Error, "alert('ops!' + err);");
 
 //The select event will include a selection variable, which represents chart.getSelection();
-$selectEvent = new \Helvetiapps\LagoonCharts\Utils\Event(\Helvetiapps\LagoonCharts\Utils\EventType::Select, "alert(selection[0][0]);");
+$selectEvent = new \Helvetitec\LagoonCharts\Utils\Event(\Helvetitec\LagoonCharts\Utils\EventType::Select, "alert(selection[0][0]);");
 
 $eventArr = [
     'ready' => $readyEvent->__toString(),

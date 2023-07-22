@@ -9,4 +9,4 @@
 
 ## Reporting a Vulnerability
 
-Report any vulnerability to github@helvetiapps.com with the title "Vulnerability in Lagoon Charts".
+Report any vulnerability to github@helvetitec.com with the title "Vulnerability in Lagoon Charts".

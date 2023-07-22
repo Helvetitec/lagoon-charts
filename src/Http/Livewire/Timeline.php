@@ -1,6 +1,6 @@
 <?php
 
-namespace Helvetiapps\LagoonCharts\Http\Livewire;
+namespace Helvetitec\LagoonCharts\Http\Livewire;
 
 use Carbon\Carbon;
 use Livewire\Component;

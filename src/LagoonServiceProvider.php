@@ -1,16 +1,16 @@
 <?php
 
-namespace Helvetiapps\LagoonCharts;
+namespace Helvetitec\LagoonCharts;
 
-use Helvetiapps\LagoonCharts\Http\Livewire\LineChart;
-use Helvetiapps\LagoonCharts\Http\Livewire\PieChart;
-use Helvetiapps\LagoonCharts\Http\Livewire\AreaChart;
-use Helvetiapps\LagoonCharts\Http\Livewire\BarChart;
-use Helvetiapps\LagoonCharts\Http\Livewire\CandlestickChart;
-use Helvetiapps\LagoonCharts\Http\Livewire\ColumnChart;
-use Helvetiapps\LagoonCharts\Http\Livewire\GanttChart;
-use Helvetiapps\LagoonCharts\Http\Livewire\Timeline;
-use Helvetiapps\LagoonCharts\Http\Livewire\WaterfallChart;
+use Helvetitec\LagoonCharts\Http\Livewire\LineChart;
+use Helvetitec\LagoonCharts\Http\Livewire\PieChart;
+use Helvetitec\LagoonCharts\Http\Livewire\AreaChart;
+use Helvetitec\LagoonCharts\Http\Livewire\BarChart;
+use Helvetitec\LagoonCharts\Http\Livewire\CandlestickChart;
+use Helvetitec\LagoonCharts\Http\Livewire\ColumnChart;
+use Helvetitec\LagoonCharts\Http\Livewire\GanttChart;
+use Helvetitec\LagoonCharts\Http\Livewire\Timeline;
+use Helvetitec\LagoonCharts\Http\Livewire\WaterfallChart;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 

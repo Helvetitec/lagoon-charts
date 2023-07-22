@@ -1,6 +1,6 @@
 <?php
 
-namespace Helvetiapps\LagoonCharts\DataTables;
+namespace Helvetitec\LagoonCharts\DataTables;
 
 use Carbon\Carbon;
 

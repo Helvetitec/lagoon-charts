@@ -1,6 +1,6 @@
 <?php
 
-namespace Helvetiapps\LagoonCharts\Utils;
+namespace Helvetitec\LagoonCharts\Utils;
 
 enum EventType{
     case Select;

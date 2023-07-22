@@ -1,6 +1,6 @@
 <?php
 
-namespace Helvetiapps\LagoonCharts\Actions;
+namespace Helvetitec\LagoonCharts\Actions;
 
 class SwitchAction{
 
