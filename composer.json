@@ -1,6 +1,6 @@
 {
     "name": "helvetitec/lagoon-charts",
-    "description": "Google Charts for Laravel Livewire",
+    "description": "Google Charts for Laravel Livewire 3",
     "type": "library",
     "license": "GPL-3.0",
     "autoload": {
