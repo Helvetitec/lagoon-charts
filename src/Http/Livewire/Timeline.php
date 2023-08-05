@@ -19,7 +19,13 @@ class Timeline extends Component
 
     public $optionsArray;
 
+    public $localization;
+
     public function mount(){
+        if(is_null($this->localization)){
+            $this->localization = config("lagoon.language");
+        }
+
         $newOptions = [
             'title' => 'None'
         ];
