@@ -2,5 +2,9 @@
 
 return [
   'useSingleLanguage' => true,
-  'language' => 'en'
+  'language' => 'en',
+  'lightmodeForeground' => '#000000',
+  'lightmodeBackground' => 'transparent',
+  'darkmodeForeground' => '#ffffff',
+  'darkmodeBackground' => 'transparent'
 ];
