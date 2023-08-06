@@ -33,7 +33,7 @@ composer require helvetitec/lagoon-charts:~1.0
 - [x] Waterfall Charts
 - [x] Timelines
 - [x] Gantt Charts
-- [x] Other Charts
+- [ ] Other Charts
 
 ## Included Functions
 
