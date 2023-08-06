@@ -24,21 +24,22 @@ composer require helvetitec/lagoon-charts:~1.0
 ## Included Charts
 
 
-[ ] Area Charts
-[ ] Bar Charts
-[ ] Candlestick Charts
-[ ] Column Charts
-[ ] Line Charts
-[ ] Pie Charts
-[ ] Waterfall Charts
-[ ] Timelines
-[ ] Gantt Charts
-[ ] Other Charts
+[x] Area Charts
+[x] Bar Charts
+[x] Candlestick Charts
+[x] Column Charts
+[x] Line Charts
+[x] Pie Charts
+[x] Waterfall Charts
+[x] Timelines
+[x] Gantt Charts
+[x] Other Charts
 
 ## Included Functions
 
-[ ] Actions
-[ ] Events (Selected, Ready, Error)
+[x] Actions
+[x] Events (Selected, Ready, Error)
+[ ] Tailwind Darkmode (Would be nice if it would be automatically set, maybe with the right fontcolor and such, only important for frontend)
 [ ] Custom Tooltips
 [ ] HTML Tooltips
 
