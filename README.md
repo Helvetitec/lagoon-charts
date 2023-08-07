@@ -46,6 +46,31 @@ composer require helvetitec/lagoon-charts:~1.0
 
 ## Usage
 
+### Prepare View
+Important, since Version 2.2 you will need to add @lagoonScripts and @lagoonStyles to your layouts!
+
+Add Styles:
+```blade
+@lagoonStyles <!-- This will add a small style part which will cause tooltipps stop cliping when hover over with the mouse -->
+```
+
+CoreCharts:
+```blade
+@lagoonScripts('en') <!-- The only parameter needed is the localization parameter, you can use any language recognized by Google -->
+@lagoonScripts({{ app()->getLocale() }}) <!-- This will set the localization to the locale set in Laravel -->
+```
+
+Gantt Charts:
+```blade
+@lagoonScripts('en', 'gantt') <!-- To make Gantt Charts working, you'll need to load the package -->
+@lagoonScripts('en', ['corechart', 'gantt']) <!-- If you have multiple chart types, add them as an array -->
+```
+
+Timeline Charts:
+```blade
+@lagoonScripts('en', 'timeline') <!-- To make Timeline Charts working, you'll need to load the package -->
+@lagoonScripts('en', ['corechart', 'timeline']) <!-- If you have multiple chart types, add them as an array -->
+```
 
 ### Pie Chart
 
