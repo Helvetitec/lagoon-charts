@@ -57,7 +57,7 @@ Add Styles:
 CoreCharts:
 ```blade
 @lagoonScripts('en') <!-- The only parameter needed is the localization parameter, you can use any language recognized by Google -->
-@lagoonScripts(app()->getLocale()) <!-- This will set the localization to the locale set in Laravel -->
+@lagoonScripts({{ app()->getLocale() }}) <!-- This will set the localization to the locale set in Laravel -->
 ```
 
 Gantt Charts:
