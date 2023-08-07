@@ -59,7 +59,7 @@ class LagoonServiceProvider extends ServiceProvider
       </script>';
     });
 
-    Blade::directive('lagoonStyles', function ($localization) {
+    Blade::directive('lagoonStyles', function () {
       return '<style>
       svg > g > g.google-visualization-tooltip { pointer-events: none }
       </style>';
