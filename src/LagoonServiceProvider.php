@@ -11,6 +11,7 @@ use Helvetitec\LagoonCharts\Http\Livewire\ColumnChart;
 use Helvetitec\LagoonCharts\Http\Livewire\GanttChart;
 use Helvetitec\LagoonCharts\Http\Livewire\Timeline;
 use Helvetitec\LagoonCharts\Http\Livewire\WaterfallChart;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -33,6 +34,19 @@ class LagoonServiceProvider extends ServiceProvider
     Livewire::component('lagoon-candlestick-chart', CandlestickChart::class);
     Livewire::component('lagoon-waterfall-chart', WaterfallChart::class);
     Livewire::component('lagoon-timeline', Timeline::class);
+
+    Blade::directive('lagoonScripts', function ($localization, $package = 'corechart') {
+      return '<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load(\'current\', {\'packages\':[\''.$package.'\'], \'language\': \''.$localization.'\'});
+      </script>';
+    });
+
+    Blade::directive('lagoonStyles', function ($localization) {
+      return '<style>
+      svg > g > g.google-visualization-tooltip { pointer-events: none }
+      </style>';
+    });
 
     if ($this->app->runningInConsole())
     {

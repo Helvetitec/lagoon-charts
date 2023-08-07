@@ -1,4 +1,5 @@
 <div>
+    {{-- Add @lagoonScripts('en', 'gantt') --}}
     @once
         @push('styles')
             <style>
