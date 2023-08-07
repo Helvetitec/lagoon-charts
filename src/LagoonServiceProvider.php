@@ -2,6 +2,7 @@
 
 namespace Helvetitec\LagoonCharts;
 
+use Exception;
 use Helvetitec\LagoonCharts\Http\Livewire\LineChart;
 use Helvetitec\LagoonCharts\Http\Livewire\PieChart;
 use Helvetitec\LagoonCharts\Http\Livewire\AreaChart;
@@ -35,10 +36,26 @@ class LagoonServiceProvider extends ServiceProvider
     Livewire::component('lagoon-waterfall-chart', WaterfallChart::class);
     Livewire::component('lagoon-timeline', Timeline::class);
 
-    Blade::directive('lagoonScripts', function ($localization, $package = 'corechart') {
+    Blade::directive('lagoonScripts', function ($localization, $packages = 'corechart') {
+      if(is_array($packages)){
+        $packagesStr = '[';
+        foreach($packages as $package)
+        {
+          if($packagesStr != '[')
+          {
+            $packagesStr .= ',';
+          }
+          $packagesStr .= $package;
+        }
+        $packagesStr .= ']';
+
+        $packages = $packagesStr;
+      }else{
+        $packages = '['.$packages.']';
+      }
       return '<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript">
-        google.charts.load(\'current\', {\'packages\':[\''.$package.'\'], \'language\': \''.$localization.'\'});
+        google.charts.load(\'current\', {\'packages\':[\''.$packages.'\'], \'language\': \''.$localization.'\'});
       </script>';
     });
 
