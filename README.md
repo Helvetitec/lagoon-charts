@@ -39,7 +39,8 @@ composer require helvetitec/lagoon-charts:~1.0
 
 - [x] Actions
 - [x] Events (Selected, Ready, Error)
-- [ ] Tailwind Darkmode (Would be nice if it would be automatically set, maybe with the right fontcolor and such, only important for frontend)
+- [x] Darkmode (Can be manually set if you set the 'viewMode' to 'light' to enable lightmode or 'dark' to enable darkmode
+- [ ] Automatic Darkmode (Would be nice if it would be automatically set)
 - [ ] Custom Tooltips
 - [ ] HTML Tooltips
 
