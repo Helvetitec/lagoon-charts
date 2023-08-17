@@ -51,11 +51,12 @@ class LagoonServiceProvider extends ServiceProvider
 
         $packages = $packagesStr;
       }else{
-        $packages = '['.$packages.']';
+        $packages = '[\''.$packages.'\']';
       }
+
       return '<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript">
-        google.charts.load(\'current\', {\'packages\':[\''.$packages.'\'], \'language\': \''.$localization.'\'});
+        google.charts.load(\'current\', {\'packages\':'.$packages.', \'language\': \''.$localization.'\'});
       </script>';
     });
 
